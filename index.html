@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Assinar Mensagem com MetaMask</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+    <h2>Assinar Mensagem com MetaMask</h2>
+    <p>Endereço do contrato que você deseja assinar:</p>
+    <input type="text" id="message" size="60" placeholder="Cole sua mensagem aqui">
+    <br><br>
+    <button onclick="signMessage()">Assinar</button>
+    <h3>Assinatura:</h3>
+    <textarea id="signature" cols="80" rows="5" readonly></textarea>
+
+    <script>
+        async function signMessage() {
+            if (typeof window.ethereum === 'undefined') {
+                alert('MetaMask não detectado');
+                return;
+            }
+
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            const account = accounts[0];
+            const message = document.getElementById('message').value;
+            const from = account;
+
+            try {
+                const signature = await ethereum.request({
+                    method: 'personal_sign',
+                    params: [message, from],
+                });
+
+                document.getElementById('signature').value = signature;
+            } catch (err) {
+                alert('Erro ao assinar: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
