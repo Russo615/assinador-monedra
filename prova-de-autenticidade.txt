@@ -1,0 +1,9 @@
+Mensagem:
+Confirmo que sou a proprietário do contrato Monedra (MND) na BNB Smart Chain:
+0x02b0D11F25ED8cF3f5BDCe62192960367934A825
+
+Assinatura:
+0xbf955abe5c8a4f9a3ffabc2f8982a2c401b127f2dfebda858714cf4c4cff7ca77c90b08b94a17c5f119dedb77fdc4706cbc2c5b438df7fa1615cac97cb5aa9d51c
+
+Endereço da conta:
+0x512ccf3266b5D5fdD3b0fd04154A12978C2AB3a8
